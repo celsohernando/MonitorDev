@@ -39,7 +39,7 @@ This file will be written to the working directory.
 from customCHF.functions import InvokeWMLCHF
 
 
-fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
+fn = InvokeWMLCHF(input_items = ['DUID'], wml_auth = {
  "apikey": "Z2qz6FBrhi-Bo2EGn69fAYVeT9Xd9v2bSSvYG9AX5kvB",
  "url": "https://eu-de.ml.cloud.ibm.com",
  "space_id": "cda9a057-1eb3-4061-83a2-b0eeaabc1588",
