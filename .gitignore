@@ -2,7 +2,7 @@
 ##########################
 scripts/credentials.json
 scripts/credentials_as.json
-credentials_as.json
+scripts/credentials_as.json
 #debug file #
 #############
 scripts/debugPipelineSourceData.csv

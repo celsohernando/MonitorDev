@@ -51,7 +51,7 @@ class InvokeWMLCHF(BaseTransformer):
         self.whoami = 'InvokeWMLModel'
 
         self.input_items = input_items
-        #self.set_entity_type('mfprinter1_li')
+        self.set_entity_type('mfprinter1_li')
 
         if isinstance(output_items, str):
             self.output_items = [output_items]    # regression
@@ -159,13 +159,14 @@ class InvokeWMLCHF(BaseTransformer):
 
     def _calc(self, df):
 
-        #inbuffer = StringIO()
-        #df.to_csv(inbuffer, encoding='utf-8', index=True)
-        #logger.info('INPUT DATAFRAME')
-        #logger.info(df.dtypes)
-        #logger.info(inbuffer.getvalue())
+        inbuffer = StringIO()
+        df.to_csv(inbuffer, encoding='utf-8', index=True)
+        logger.info('INPUT DATAFRAME')
+        logger.info(df.dtypes)
+        logger.info(inbuffer.getvalue())
 
         if len(self.input_items) >= 1:
+            self.input_items = self.input_items['duid'].apply(lambda x: int(x*1000))
             index_nans = df[df[self.input_items].isna().any(axis=1)].index
             rows = df.loc[~df.index.isin(index_nans), self.input_items].values.tolist()
             INPUT_ITEMS = [x.upper() for x in self.input_items]
@@ -197,11 +198,11 @@ class InvokeWMLCHF(BaseTransformer):
         else:
             logging.error('error invoking external model')
 
-        #outbuffer = StringIO()
-        #df.to_csv(outbuffer, encoding='utf-8', index=True)
-        #logger.info('OUTPUT DATAFRAME')
-        #logger.info(df.dtypes)
-        #logger.info(outbuffer.getvalue())
+        outbuffer = StringIO()
+        df.to_csv(outbuffer, encoding='utf-8', index=True)
+        logger.info('OUTPUT DATAFRAME')
+        logger.info(df.dtypes)
+        logger.info(outbuffer.getvalue())
 
         return df
 

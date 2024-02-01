@@ -15,7 +15,7 @@ Place your credentials in a separate file that you don't check into the repo.
 
 '''
 
-with open('credentials_as_dev.json', encoding='utf-8') as F:
+with open('credentials_as.json', encoding='utf-8') as F:
     credentials = json.loads(F.read())
 db_schema = None
 db = Database(credentials=credentials)
@@ -36,10 +36,19 @@ This file will be written to the working directory.
 
 '''
 
-from customCHF.functions import HelloWorld
+from customCHF.functions import InvokeWMLCHF
 
-fn = HelloWorld(name='AS_Tester', greeting_col='greeting')
-fn.execute_local_test(db=db, db_schema=db_schema)
+
+fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
+ "apikey": "Z2qz6FBrhi-Bo2EGn69fAYVeT9Xd9v2bSSvYG9AX5kvB",
+ "url": "https://eu-de.ml.cloud.ibm.com",
+ "space_id": "cda9a057-1eb3-4061-83a2-b0eeaabc1588",
+ "deployment_id": "6ece3a93-951e-4d97-ae68-44b1d98e5242"
+}, output_items = ['prediction'])
+
+df = fn.execute_local_test(db=db, db_schema=db_schema, generate_days=1,to_csv=True)
+
+
 
 '''
 Register function so that you can see it in the UI
