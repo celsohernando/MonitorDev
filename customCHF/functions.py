@@ -163,7 +163,8 @@ class InvokeWMLCHF(BaseTransformer):
         df.to_csv(inbuffer, encoding='utf-8', index=True)
         logger.info('INPUT DATAFRAME')
         logger.info(df.dtypes)
-        df = df['duid'].apply(lambda x: int(x * 1000))
+        logger.info('CAMBIO LOS FLOAT')
+        df = df['duid'].apply(lambda x: abs(int(x * 1000)))
         logger.info(df.head(10))
         logger.info(inbuffer.getvalue())
 
