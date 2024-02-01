@@ -163,11 +163,12 @@ class InvokeWMLCHF(BaseTransformer):
         df.to_csv(inbuffer, encoding='utf-8', index=True)
         logger.info('INPUT DATAFRAME')
         logger.info(df.dtypes)
+        df = df['duid'].apply(lambda x: int(x * 1000))
         logger.info(df.head(10))
         logger.info(inbuffer.getvalue())
 
         if len(self.input_items) >= 1:
-            df = df['duid'].apply(lambda x: int(x*1000))
+
             index_nans = df[df[self.input_items].isna().any(axis=1)].index
             rows = df.loc[~df.index.isin(index_nans), self.input_items].values.tolist()
             INPUT_ITEMS = [x.upper() for x in self.input_items]
