@@ -45,4 +45,4 @@ fn.execute_local_test(db=db, db_schema=db_schema)
 Register function so that you can see it in the UI
 '''
 
-db.register_functions([HelloWorld])
+#db.register_functions([HelloWorld])
