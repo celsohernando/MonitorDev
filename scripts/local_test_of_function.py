@@ -36,7 +36,7 @@ This file will be written to the working directory.
 
 '''
 
-from custom.functions import HelloWorld
+from customCHF.functions import HelloWorld
 
 fn = HelloWorld(name='AS_Tester', greeting_col='greeting')
 fn.execute_local_test(db=db, db_schema=db_schema)

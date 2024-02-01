@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 # Specify the URL to your package here.
 # This URL must be accessible via pip install
 
-PACKAGE_URL = 'git+https://github.com/<path_to_repository>@'
+PACKAGE_URL = 'https://github.com/celsohernando/MonitorDev.git'
 
 
 class HelloWorld(BaseTransformer):

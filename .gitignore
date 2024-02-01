@@ -1,6 +1,7 @@
 #credentials for testing #
 ##########################
 scripts/credentials.json
+scripts/credentials_as.json
 
 #debug file #
 #############
