@@ -161,15 +161,15 @@ class InvokeWMLCHF(BaseTransformer):
 
     def _calc(self, df):
 
-        inbuffer = StringIO()
+        #inbuffer = StringIO()
 
-        logger.info('INPUT DATAFRAME')
-        logger.info(df.dtypes)
-        logger.info('CAMBIO LOS FLOAT')
+        #logger.info('INPUT DATAFRAME')
+        #logger.info(df.dtypes)
+        #logger.info('CAMBIO LOS FLOAT')
         #df['duid'] = df['duid'].apply(lambda x: abs(int(x * 1000)))
         #logger.info(df.head(10))
-        df.to_csv(inbuffer, encoding='utf-8', index=True)
-        logger.info(inbuffer.getvalue())
+        #df.to_csv(inbuffer, encoding='utf-8', index=True)
+        #logger.info(inbuffer.getvalue())
 
         if len(self.input_items) >= 1:
 
@@ -207,11 +207,11 @@ class InvokeWMLCHF(BaseTransformer):
         else:
             logging.error('error invoking external model')
 
-        outbuffer = StringIO()
-        df.to_csv(outbuffer, encoding='utf-8', index=True)
-        logger.info('OUTPUT DATAFRAME')
-        logger.info(df.dtypes)
-        logger.info(outbuffer.getvalue())
+        #outbuffer = StringIO()
+        #df.to_csv(outbuffer, encoding='utf-8', index=True)
+        #logger.info('OUTPUT DATAFRAME')
+        #logger.info(df.dtypes)
+        #logger.info(outbuffer.getvalue())
 
         return df
 
