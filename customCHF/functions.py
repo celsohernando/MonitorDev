@@ -63,7 +63,9 @@ class InvokeWMLCHF(BaseTransformer):
         self.deployment_id = None
         self.apikey = None
         self.wml_endpoint = None
-        self.space_id = None
+        #self.space_id = None
+        self.instance_id = None
+        self.username = None
 
         self.client = None
 
@@ -186,7 +188,7 @@ class InvokeWMLCHF(BaseTransformer):
             return df
 
         results = self.client.deployments.score(self.deployment_id, scoring_payload)
-        
+
         if results:
             logging.info(results)
             # Regression
