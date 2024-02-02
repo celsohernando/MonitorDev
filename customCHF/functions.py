@@ -115,7 +115,7 @@ class InvokeWMLCHF(BaseTransformer):
 
         try:
             self.deployment_id = wml_credentials['deployment_id']
-            self.space_id = wml_credentials['space_id']
+            self.instance_id = wml_credentials['instance_id']
             logger.info('Found credentials for WML')
         except Exception as ae:
             raise RuntimeError("No valid WML credentials specified")
