@@ -186,7 +186,7 @@ class InvokeWMLCHF(BaseTransformer):
             return df
 
         results = self.client.deployments.score(self.deployment_id, scoring_payload)
-        logging.info(results)
+        
         if results:
             logging.info(results)
             # Regression

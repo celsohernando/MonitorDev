@@ -40,10 +40,11 @@ from customCHF.functions import InvokeWMLCHF
 
 
 fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
- "apikey": "Z2qz6FBrhi-Bo2EGn69fAYVeT9Xd9v2bSSvYG9AX5kvB",
- "url": "https://eu-de.ml.cloud.ibm.com",
- "space_id": "cda9a057-1eb3-4061-83a2-b0eeaabc1588",
- "deployment_id": "6ece3a93-951e-4d97-ae68-44b1d98e5242"
+    "apikey": 'XeERIGwjNrTltvWM5Dpow6booonrimC2znGgzMQb',
+    "url": 'https://cpd-ibm-cpd.itzroks-060001xbbx-k86rjb-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud',
+    "instance_id": "openshift",
+    "username":"admin",
+    "deployment_id"="2bf3f4c5-ccaf-4b9c-8151-1ef6ba3b4582"
 }, output_items = ['prediction'])
 
 df = fn.execute_local_test(db=db, db_schema=db_schema, generate_days=1,to_csv=True)
