@@ -63,7 +63,7 @@ class InvokeWMLCHF(BaseTransformer):
         self.deployment_id = None
         self.apikey = None
         self.wml_endpoint = None
-        #self.space_id = None
+        self.space_id = None
         self.instance_id = None
         self.username = None
 
@@ -127,7 +127,7 @@ class InvokeWMLCHF(BaseTransformer):
             raise RuntimeError("WML API Key invalid")
 
         # set space
-        #self.client.set.default_space(wml_credentials['space_id'])
+        self.client.set.default_space(wml_credentials['space_id'])
 
         # check deployment
         deployment_details = self.client.deployments.get_details(self.deployment_id, 1)

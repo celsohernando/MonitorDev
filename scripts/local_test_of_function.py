@@ -43,6 +43,7 @@ fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
     "apikey": 'XeERIGwjNrTltvWM5Dpow6booonrimC2znGgzMQb',
     "url": 'https://cpd-ibm-cpd.itzroks-060001xbbx-k86rjb-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud',
     "instance_id": "openshift",
+    "space_id":"557c5149-6809-428c-b501-2064cc51d44e",
     "username":"admin",
     "deployment_id":"2bf3f4c5-ccaf-4b9c-8151-1ef6ba3b4582",
     "version":"4.0"
