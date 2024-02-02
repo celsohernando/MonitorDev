@@ -45,7 +45,7 @@ fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
     "instance_id": "openshift",
     "space_id":"557c5149-6809-428c-b501-2064cc51d44e",
     "username":"admin",
-    "deployment_id":"2bf3f4c5-ccaf-4b9c-8151-1ef6ba3b4582",
+    "deployment_id":"e80c6734-539e-493f-8474-597b6bd6da14",
     "version":"4.0"
 }, output_items = ['prediction'])
 
