@@ -45,7 +45,7 @@ fn = InvokeWMLCHF(input_items = ['duid'], wml_auth = {
     "instance_id": "openshift",
     "username":"admin",
     "deployment_id":"2bf3f4c5-ccaf-4b9c-8151-1ef6ba3b4582",
-    "version":"4.6"
+    "version":"4.0"
 }, output_items = ['prediction'])
 
 df = fn.execute_local_test(db=db, db_schema=db_schema, generate_days=1,to_csv=True)
