@@ -166,8 +166,8 @@ class InvokeWMLCHF(BaseTransformer):
         logger.info('INPUT DATAFRAME')
         logger.info(df.dtypes)
         logger.info('CAMBIO LOS FLOAT')
-        df['duid'] = df['duid'].apply(lambda x: abs(int(x * 1000)))
-        logger.info(df.head(10))
+        #df['duid'] = df['duid'].apply(lambda x: abs(int(x * 1000)))
+        #logger.info(df.head(10))
         df.to_csv(inbuffer, encoding='utf-8', index=True)
         logger.info(inbuffer.getvalue())
 
@@ -193,12 +193,12 @@ class InvokeWMLCHF(BaseTransformer):
             logging.info(results)
             # Regression
             if len(self.output_items) == 1:
-                logging.info('Esto es una regresion')
+
                 df.loc[~df.index.isin(index_nans), self.output_items] = \
                     np.array(results['predictions'][0]['values']).flatten()
             # Classification
             else:
-                logging.info('Esto es una clasificacion')
+
                 arr = np.array(results['predictions'][0]['values'])
                 df.loc[~df.index.isin(index_nans), self.output_items[0]] = arr[:,0].astype(int)
                 arr2 = np.array(arr[:,1].tolist())
