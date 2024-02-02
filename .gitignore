@@ -3,6 +3,7 @@
 scripts/credentials.json
 scripts/credentials_as.json
 scripts/credentials_as.json
+scripts/local_test_of_function.py
 #debug file #
 #############
 scripts/debugPipelineSourceData.csv
