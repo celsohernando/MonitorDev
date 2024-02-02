@@ -186,13 +186,15 @@ class InvokeWMLCHF(BaseTransformer):
             return df
 
         results = self.client.deployments.score(self.deployment_id, scoring_payload)
-
+        logging.info(results)
         if results:
             # Regression
+            logging.info('Esto es una regresion')
             if len(self.output_items) == 1:
                 df.loc[~df.index.isin(index_nans), self.output_items] = \
                     np.array(results['predictions'][0]['values']).flatten()
             # Classification
+            logging.info('Esto es una clasificacion')
             else:
                 arr = np.array(results['predictions'][0]['values'])
                 df.loc[~df.index.isin(index_nans), self.output_items[0]] = arr[:,0].astype(int)
